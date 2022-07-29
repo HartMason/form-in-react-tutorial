@@ -15,7 +15,7 @@ class App extends Component {
   handleChange = (e) => {
     console.log(e.target.name)
     this.setState({                            
-      firstName: e.target.value
+      firstName: e.target.value //e.target.name can be either firstName or lastName below!! instead of doing what we had before
     })
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
     console.log(this.state.firstName)
 
     //Where we send data off to a server
-    axios.post('/user', {
+    axios.post('database-1.c5m1u2xdc9y8.us-east-1.rds.amazonaws.com', {
       firstName: this.state.firstName,
       lastName: this.state.lastName
     })
